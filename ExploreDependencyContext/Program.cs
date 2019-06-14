@@ -9,7 +9,7 @@ namespace ExploreDependencyContext
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var onlyCompileLibraries = Array.IndexOf(args, "-c") > -1;
 
             var serviceCollection = new ServiceCollection();
             serviceCollection.AddScoped<ILoggerFactory, LoggerFactory>();
@@ -26,7 +26,8 @@ namespace ExploreDependencyContext
             var serviceProvider = serviceCollection.BuildServiceProvider();
 
             var doSomethingService = serviceProvider.GetService<IDoSomething>();
-            doSomethingService.BeProductive();
+            doSomethingService.PrintExecutingAssemblyDetails();
+            doSomethingService.PrintDependencyContextDetails(onlyCompileLibraries);
 
             Console.ReadLine();
         }
