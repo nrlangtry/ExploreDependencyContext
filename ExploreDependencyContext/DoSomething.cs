@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CoreConsoleAppLogging
+namespace ExploreDependencyContext
 {
     public interface IDoSomething
     {
