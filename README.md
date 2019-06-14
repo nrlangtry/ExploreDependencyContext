@@ -1,4 +1,6 @@
-# CoreConsoleAppLogging
-.NET Core Console App w/ static logging added
+# ExploreDependencyContext
+.NET Core Console App printing-out various details of the Microsoft.Extensions.DependencyModel's DependencyContext.
 
-.NET Core Console projects don't have as many out-of-the-box logging features as MVC projects.  This is the start of a new Console project w/ logging & appSettings already added.  This uses the same static Logger class as the CoreAppFramework repo.
+Our company was using a 3rd-party framework that registered classes for dependency injection using the DependencyContext.Default.CompileLibraries.  I found that no classes were registered in release mode because the CompileLibraries property was null.
+
+I created this project to look into the DependencyContext and what options we had to fix the issue.
